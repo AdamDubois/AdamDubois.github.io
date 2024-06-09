@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Status</title>
+    <link rel="stylesheet" type="text/css" href="static/css/styles.css">
+    <script src="static/js/script.js"></script>
+</head>
+<body>
+    <h1>Inventory Status</h1>
+    <div id="car-status"></div>
+    <div id="loading" class="loading" style="display: none;">Loading...</div>
+    <button id="totalCarsBtn">Show Total Working Cars</button>
+    <p id="totalCars"></p>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            fetchStatus();
+            document.getElementById('totalCarsBtn').addEventListener('click', fetchTotalWorkingCars);
+        });
+
+        async function fetchTotalWorkingCars() {
+            try {
+                const response = await fetch('/working_cars');
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                const data = await response.json();
+                document.getElementById('totalCars').innerText = 'Total working cars: ' + data.working_cars;
+            } catch (error) {
+                alert('Failed to fetch total working cars: ' + error.message);
+            }
+        }
+    </script>
+</body>
+</html>
