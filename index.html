@@ -9,62 +9,36 @@
     <body>
         <h1>Adam Dubois</h1>
         
-        <!-- Affichage d'un PDF avec solutions multiples -->
+        <!-- Affichage d'un PDF optimisé pour GitHub Pages -->
         <div class="pdf-container">
             <h2>Mon CV</h2>
             
-            <!-- Solution principale : PDF.js hébergé par Mozilla -->
-            <div id="pdf-viewer">
-                <iframe id="pdf-frame" 
-                        src="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://adamdubois.github.io/cv.pdf" 
-                        width="100%" 
-                        height="600px"
-                        style="border: 1px solid #ddd;"
-                        onload="showViewer()"
-                        onerror="showFallback()">
-                </iframe>
-            </div>
-            
-            <!-- Solution de secours -->
-            <div id="pdf-fallback" style="display: none;">
-                <div class="fallback-message">
-                    <h3>📄 Consultation du PDF</h3>
-                    <p>Le PDF ne peut pas être affiché directement dans cette page.</p>
-                    <div class="pdf-buttons">
-                        <a href="cv.pdf" target="_blank" class="pdf-button primary">
-                            📖 Ouvrir dans un nouvel onglet
-                        </a>
-                        <a href="cv.pdf" download class="pdf-button secondary">
-                            💾 Télécharger le PDF
-                        </a>
+            <!-- Prévisualisation avec lien direct -->
+            <div class="pdf-preview">
+                <div class="pdf-info">
+                    <div class="pdf-icon">📄</div>
+                    <div class="pdf-details">
+                        <h3>CV - Adam Dubois</h3>
+                        <p>Document PDF • Étudiant en électronique</p>
                     </div>
                 </div>
+                
+                <div class="pdf-actions">
+                    <a href="CV.pdf" target="_blank" class="pdf-button primary">
+                        👁️ Visualiser
+                    </a>
+                    <a href="CV.pdf" download class="pdf-button secondary">
+                        💾 Télécharger
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Tentative d'affichage intégré -->
+            <div class="pdf-embed-container">
+                <object data="CV.pdf" type="application/pdf" width="100%" height="600px">
+                    <embed src="CV.pdf" type="application/pdf" width="100%" height="600px" />
+                </object>
             </div>
         </div>
-        
-        <script>
-            function showViewer() {
-                document.getElementById('pdf-viewer').style.display = 'block';
-                document.getElementById('pdf-fallback').style.display = 'none';
-            }
-            
-            function showFallback() {
-                document.getElementById('pdf-viewer').style.display = 'none';
-                document.getElementById('pdf-fallback').style.display = 'block';
-            }
-            
-            // Vérification après 3 secondes si le PDF s'est chargé
-            setTimeout(function() {
-                const iframe = document.getElementById('pdf-frame');
-                try {
-                    // Si on ne peut pas accéder au contenu, on affiche le fallback
-                    if (!iframe.contentDocument && !iframe.contentWindow) {
-                        showFallback();
-                    }
-                } catch (e) {
-                    // En cas d'erreur CORS, on garde PDF.js qui gère mieux
-                }
-            }, 3000);
-        </script>
     </body>
 </html>
