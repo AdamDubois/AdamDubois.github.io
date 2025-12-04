@@ -73,3 +73,39 @@ input[type="text"][readonly] {
     background-color: white;
     color: white;
 }
+
+/* Styles pour l'affichage du PDF */
+.pdf-container {
+    margin: 20px auto;
+    max-width: 1000px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.pdf-container h2 {
+    color: #333;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.pdf-container embed {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.pdf-container p {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.pdf-container a {
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.pdf-container a:hover {
+    text-decoration: underline;
+}
