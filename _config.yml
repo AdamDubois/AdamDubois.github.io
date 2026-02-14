@@ -1,2 +1,53 @@
-timezone: America/Toronto
+# ============================================
+# Configuration du site - Adam Dubois
+# ============================================
+
+# Informations principales
+title: Adam Dubois
+description: Étudiant en électronique | Portfolio & CV
+author: Adam Dubois
+email: contact@adamdubois.fr
+
+# URL du site
+url: "https://adamdubois.github.io"
+baseurl: ""
+
+# Configuration Jekyll
+theme: minima
+
+# Permaliens
+permalink: pretty
+
+# Fichiers à exclure de la génération
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/
+
+# Plugins Jekyll (activés par GitHub Pages)
+plugins:
+  - jekyll-seo-tag        # Optimisation SEO automatique
+  - jekyll-sitemap        # Génération du sitemap.xml
+  - jekyll-feed           # Flux RSS
+  - jekyll-github-metadata
+
+# Métadonnées SEO
 lang: fr
+timezone: America/Toronto
+
+# Réseaux sociaux (personnalisez selon vos profils)
+social:
+  github: AdamDubois
+  linkedin: votre-profil-linkedin
+
+# Configuration de l'auteur
+author:
+  name: Adam Dubois
+  bio: "Étudiant passionné par l'électronique et les technologies"
+  location: "Québec, Canada"
+
+# Paramètres personnalisés
+cv_path: "CV.pdf"
+show_downloads: true
