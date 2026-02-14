@@ -6,7 +6,7 @@
 title: Adam Dubois
 description: Étudiant en électronique | Portfolio & CV
 author: Adam Dubois
-email: contact@adamdubois.fr
+email: adamdubois19@hotmail.com
 
 # URL du site
 url: "https://adamdubois.github.io"
@@ -40,13 +40,12 @@ timezone: Europe/Paris
 # Réseaux sociaux (personnalisez selon vos profils)
 social:
   github: AdamDubois
-  linkedin: votre-profil-linkedin
 
 # Configuration de l'auteur
 author:
   name: Adam Dubois
   bio: "Étudiant passionné par l'électronique et les technologies"
-  location: "France"
+  location: "Canada"
 
 # Paramètres personnalisés
 cv_path: "CV.pdf"
